@@ -32,15 +32,15 @@ function App() {
   }
 
   useEffect(() => {
-    const localTodos = JSON.parse(localStorage.getItem("settingTodos"))
+    const localTodos = JSON.parse(localStorage.getItem("todos"))
 
-    if(localTodos.length>0){
+    if(localTodos && localTodos.length>0){
       setTodos(localTodos)
     }
   },[])
 
   useEffect(() => {
-    localStorage.setItem("settingTodos", JSON.stringify(todos))
+    localStorage.setItem("todos", JSON.stringify(todos))
   },[todos])
 
   return (
